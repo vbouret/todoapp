@@ -9,9 +9,6 @@ using TodoApp.DataAccess.Model;
 
 namespace TodoApp.DataAccess.Repository
 {
-    //mlab.com : mongo1todo
-    //Database user: cbctodoapp_admin
-    //Database password: admin
     //mongodb://<dbuser>:<dbpassword>@ds044989.mlab.com:44989/cbctodoapp
     //Database: cbctodoapp
 
