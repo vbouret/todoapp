@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <base href="/">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <todo-app>Loading....</todo-app>
+
+    <script>
+        (function (angularApp) {
+            (function (config) {
+                config.rootUrl = '/'; //'@Url.Content("~/")';
+                console.log("Config data " + JSON.stringify(window.angularApp.config));
+            })(window.angularApp.config || (window.angularApp.config = {}))
+
+        })(window.angularApp || (window.angularApp = {}))
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app')
+            .then(
+                function () { console.log('SPA started'); },
+                function (err) { console.log('SPA error while starting'); console.log(err); }
+            );
+    </script>
+</body>
+</html>

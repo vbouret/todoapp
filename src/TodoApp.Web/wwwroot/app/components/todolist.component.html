@@ -1,0 +1,37 @@
+
+
+<div class="row">
+    <h2>List of items to do</h2>
+</div>
+
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="exampleInputName2">New item</label>
+            <input type="text" class="form-control" id="newTodoItemDescription" name="newTodoItemDescription" placeholder="New Todo Item..." [(ngModel)]="newTodoItem.description">
+        </div>
+        <button type="submit" class="btn btn-default" (click)="createTodoItem()">Create</button>
+    </form>
+</div>
+
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>Completed</th>
+            <th>Description</th>
+            <th>Completion date/time</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let todoItem of todoItemList">
+            <td><input type="checkbox" [ngModel]="todoItem.isCompleted" (ngModelChange)="toggleStatus(todoItem.id)" data-md-icheck /></td>
+            <td>{{todoItem.description}}</td>
+            <td>
+                <span *ngIf="todoItem.isCompleted">{{todoItem.completionDate | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+                <span *ngIf="!todoItem.isCompleted">Not completed</span>
+            </td>
+            <td><button type="button" class="btn btn-link" (click)="editTodoItem(todoItem.id)">Edit</button></td>
+            <td><button type="button" class="btn btn-link" (click)="deleteTodoItem(todoItem.id)">Delete</button></td>
+        </tr>
+    </table>
+</div>
