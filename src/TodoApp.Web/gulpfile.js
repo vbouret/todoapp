@@ -15,16 +15,12 @@ gulp.task('thirdparty', function () {
         .pipe(gulp.dest('./wwwroot/node_modules/reflect-metadata'));
     gulp.src('./node_modules/rxjs/**/*.js')
         .pipe(gulp.dest('./wwwroot/node_modules/rxjs'));
-    gulp.src('./node_modules/angular-in-memory-web-api/*.js')
-        .pipe(gulp.dest('./wwwroot/node_modules/angular-in-memory-web-api'));
     gulp.src('./node_modules/bootstrap/**/*.css')
         .pipe(gulp.dest('./wwwroot/node_modules/bootstrap'));
     gulp.src('./node_modules/bootstrap/**/*.js')
         .pipe(gulp.dest('./wwwroot/node_modules/bootstrap'));
     gulp.src('./node_modules/jquery/**/*.js')
         .pipe(gulp.dest('./wwwroot/node_modules/jquery'));
-    gulp.src('./node_modules/ng2-smart-table/**/*.*')
-        .pipe(gulp.dest('./wwwroot/node_modules/ng2-smart-table'));
 });
 
 gulp.task('copy', function () {
